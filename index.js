@@ -2,6 +2,10 @@
 var express = require('express')
 
 var app = express()
+const timezone = require("./timezone");
+
+console.log(timezone)
+console.log('timezone')
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
