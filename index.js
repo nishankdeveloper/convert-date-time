@@ -19,7 +19,7 @@ app.get('/getCurrentDateTime', function (req, res) {
   
   try {
     
-    var tzString = "Asia/Jakarta";
+    var tzString = "Asia/Kolkata";
     var date = new Date();
     date = new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));
 
