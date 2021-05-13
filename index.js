@@ -4,10 +4,8 @@ var app = express()
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
-app.get(endpoointVariable, function(request, response) {
-  
-  
-  console.log(endpoointVariable)
+app.get('/*', function(request, response) {
+
   console.log(request)
   console.log('request')
   
