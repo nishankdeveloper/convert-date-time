@@ -39,6 +39,9 @@ app.get('/getCurrentDateTime', function (req, res) {
   }
   catch (e) {
     body["success"] = false;
+    console.log(e)
+    console.log('exception message')
+    
   }
   finally {
     res.send(body);
