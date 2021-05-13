@@ -23,10 +23,13 @@ app.get('/getCurrentDateTime', function (req, res) {
   var body = {};
   
   try {
+    var clientTimezoneOffset = new Date().getTimezoneOffset()/60;//offset in hours
+console.log(clientTimezoneOffset)
     
-    var tzString = "Asia/Kolkata";
+    
+//    var tzString = "Asia/Kolkata";
     var date = new Date();
-    date = new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));
+    date = new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US" ));//, {timeZone: tzString}));
 
     var hours = date.getHours();
     var minutes = date.getMinutes();
