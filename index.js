@@ -34,7 +34,7 @@ app.get('/getCurrentDate', function (req, res) {
 
 
       console.log( data );
-      res.send( data );
+      res.send( data + ' ' +strTime );
 })
 
 
