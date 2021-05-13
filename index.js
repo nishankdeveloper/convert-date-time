@@ -19,7 +19,6 @@ app.get('/getCurrentDateTime', function (req, res) {
   
   try {
     
-    var data = new Date();
     var date = new Date();
     date = new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US"));
 
@@ -32,8 +31,7 @@ app.get('/getCurrentDateTime', function (req, res) {
     var strTime = hours + ':' + minutes + ' ' + ampm;
 
     body["success"] = true;
-    body["dateTime"] = data.toString();
-    body["dateTime2"] = date.toString();
+    body["dateTime"] = date.toString();
     body["time"] = strTime;
     
     
