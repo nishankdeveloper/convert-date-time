@@ -24,7 +24,7 @@ app.get('/getCurrentDateTime', function (req, res) {
   
   try {
     
-        Date.setClientTimezoneOffset(300)
+     
 
     
     var clientTimezoneOffset = new Date().getTimezoneOffset()/60;//offset in hours
