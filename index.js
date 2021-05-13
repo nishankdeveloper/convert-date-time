@@ -13,30 +13,37 @@ app.get('/', function(request, response) {
 
 })
 
-app.get('/getCurrentDate', function (req, res) {
-  var data = new Date();
-   console.log(data );
-
-  var tzString ="Asia/Kolkata";
-   var date = new Date();
-   date = new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US"));//, {timeZone: tzString}));
+app.get('/getCurrentDateTime', function (req, res) {
   
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm;
-          console.log( 'strTime' );
+  var body = {};
+  
+  try {
+    
+    var data;
+    var date = new Date();
+    date = new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US"));
 
-        console.log( strTime );
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
 
-
-      console.log( data );
-      res.send( data + ' ' +strTime );
+    body["success"] = true;
+    body["dateTime"] = data;
+    body["time"] = strTime;
+    
+    
+  }
+  catch (e) {
+    body["success"] = false;
+  }
+  finally {
+    res.send(body);
+  }
 })
-
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
