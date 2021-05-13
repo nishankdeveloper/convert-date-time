@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/public'))
 
 app.get('/*', function(request, response) {
 
-  console.log(request)
+  console.log(JSON.stringify(request))
   console.log('request')
   
  response.send('You are on home page');
