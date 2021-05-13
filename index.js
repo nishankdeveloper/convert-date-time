@@ -1,4 +1,5 @@
 var express = require('express')
+var CircularJSON = require('circular-json')
 var app = express()
 
 app.set('port', (process.env.PORT || 5000))
