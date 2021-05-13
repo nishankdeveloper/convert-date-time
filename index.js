@@ -17,7 +17,7 @@ app.get('/getCurrentDate', function (req, res) {
   var data = new Date();
   
       console.log( data );
-      res.end( data );
+      res.send( data );
 })
 
 
