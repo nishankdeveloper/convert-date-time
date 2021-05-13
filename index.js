@@ -55,6 +55,9 @@ app.get('/getCurrentDateTime', function (req, res) {
     
   }
   finally {
+    console.log('timenow')
+    console.log(new Date())
+    
     res.send(body);
   }
 })
