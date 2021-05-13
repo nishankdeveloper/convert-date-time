@@ -32,8 +32,8 @@ app.get('/getCurrentDateTime', function (req, res) {
     var strTime = hours + ':' + minutes + ' ' + ampm;
 
     body["success"] = true;
-    body["dateTime"] = data;
-    body["dateTime2"] = date;
+    body["dateTime"] = data.toString();
+    body["dateTime2"] = date.toString();
     body["time"] = strTime;
     
     
