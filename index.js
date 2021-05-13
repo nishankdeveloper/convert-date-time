@@ -15,8 +15,8 @@ app.get('/', function(request, response) {
 
 app.get('/getCurrentDate', function (req, res) {
   var data = new Date();
-  /*
-  var tzString = "Asia/Kolkata";
+ 
+  var tzString = "America/New_York";//"Asia/Kolkata";
    var date = new Date();
    date = (typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString})
   
@@ -31,7 +31,7 @@ app.get('/getCurrentDate', function (req, res) {
 
         console.log( strTime );
 
-  */
+
       console.log( data );
       res.send( data );
 })
