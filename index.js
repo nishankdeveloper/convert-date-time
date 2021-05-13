@@ -1,14 +1,11 @@
 var express = require('express')
-var CircularJSON = require('circular-json')
+
 var app = express()
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
-app.get('/*', function(request, response) {
-
-  console.log(CircularJSON.stringify(request));
-  console.log(JSON.parse(CircularJSON.stringify(request)));
+app.get('/', function(request, response) {
   
   console.log('request')
   
