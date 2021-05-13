@@ -2,10 +2,10 @@
 var express = require('express')
 
 var app = express()
-const timezone = require("./timezone");
+//const timezone = require("./timezone");
 
-console.log(timezone)
-console.log('timezone')
+//console.log(timezone)
+//console.log('timezone')
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
@@ -23,9 +23,12 @@ app.get('/getCurrentDateTime', function (req, res) {
   var body = {};
   
   try {
-    var clientTimezoneOffset = new Date().getTimezoneOffset()/60;//offset in hours
-console.log(clientTimezoneOffset)
     
+        Date.setClientTimezoneOffset(300)
+
+    
+    var clientTimezoneOffset = new Date().getTimezoneOffset()/60;//offset in hours
+    console.log(clientTimezoneOffset)
     
 //    var tzString = "Asia/Kolkata";
     var date = new Date();
