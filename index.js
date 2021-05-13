@@ -18,7 +18,7 @@ app.get('/getCurrentDate', function (req, res) {
  
   var tzString = "America/New_York";//"Asia/Kolkata";
    var date = new Date();
-   date = (typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString})
+   date = new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));
   
   var hours = date.getHours();
   var minutes = date.getMinutes();
