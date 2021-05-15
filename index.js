@@ -33,8 +33,10 @@ app.get('/getCurrentDateTime', function (req, res) {
     
 var now = new Date("January 02, 2012 22:00:00 GMT+0530");
 console.log(now);
+console.log(now.toISOString());
 var nowUtc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
 console.log(nowUtc);
+console.log(nowUtc.toISOString());
     
     
 //    var tzString = "Asia/Kolkata";
@@ -50,7 +52,7 @@ console.log(nowUtc);
     var strTime = hours + ':' + minutes + ' ' + ampm;
 
     body["success"] = true;
-    body["dateTime"] = date.toString();
+    body["dateTime"] = date.toISOString();
     body["time"] = strTime;
     
     
