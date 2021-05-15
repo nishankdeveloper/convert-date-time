@@ -132,18 +132,19 @@ app.get('/getCurrentDateTime', function (req, res) {
     var convertTo = req.query.convertTo;
     var utcOffset = "+00:00";   // by default
 
-    if(dateTime != null && dateTime != 'undefined' && convertTo != null && convertTo != 'undefined' ){
+    if(dateTime != null && dateTime != 'undefined' ){
       
-      //Check timezone.JSON file tzCode to get offset value.
-      timezone.forEach(element => {
-        
-         if(element.tzCode != null && element.tzCode != 'undefined' && element.tzCode == convertTo){
-            if(element.offset != null && element.offset != 'undefined'){
-              console.log(element.offset)
-              utcOffset = element.offset ;
-            }
-         }
-      });
+      if(convertTo != null && convertTo != 'undefined'){
+        //Check timezone.JSON file tzCode to get offset value.
+        timezone.forEach(element => {
+
+           if(element.tzCode != null && element.tzCode != 'undefined' && element.tzCode == convertTo){
+              if(element.offset != null && element.offset != 'undefined'){
+                utcOffset = element.offset ;
+              }
+           }
+        });
+      }
 
       //Split the offset fetched into hours and minutes.
       var a = utcOffset.split(':');
