@@ -45,7 +45,7 @@ app.get('/getCurrentDateTime', function (req, res) {
       var targetTime = new Date(dateTime);
      
       //get the date in convertTo timezone.
-      targetTime = new Date(targetTime.getTime() - ( tzDifference * 60 * 1000));
+      targetTime = new Date(targetTime.getTime() + ( tzDifference * 60 * 1000));
 
       //get the am/pm format time from the targetTime.
       var hours = targetTime.getHours();
