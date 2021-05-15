@@ -51,7 +51,8 @@ app.get('/getCurrentDateTime', function (req, res) {
       var strTime = hours + ':' + minutes + ' ' + ampm;
 
       body["success"] = true;
-      body["date"] = targetTime.getFullYear() + "-" + (targetTime.getMonth()+1) + "-" + targetTime.getDate();     //// date in YYYY-MM-DD format
+      body["date"] = targetTime.getFullYear() + "-" + ( (targetTime.getMonth()+1) < 10 ? '0'+(targetTime.getMonth()+1) : (targetTime.getMonth()+1))
+                     + "-" + ( targetTime.getDate() < 10 ? '0'+targetTime.getDate() : targetTime.getDate()) ;     //// date in YYYY-MM-DD format
       body["time"] = strTime;
       body["dateTime"] = targetTime.toISOString();
 
