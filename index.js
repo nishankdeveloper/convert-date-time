@@ -30,8 +30,8 @@ app.get('/getCurrentDateTime', function (req, res) {
             if(element.offset != null && element.offset != 'undefined'){
               console.log(element.offset)
               utcOffset = element.offset ;
-              
             }
+         }
       });
 
       //Split the offset fetched into hours and minutes.
