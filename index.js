@@ -20,6 +20,7 @@ app.get('/', function(request, response) {
 
 app.get('/getCurrentDateTime', function (req, res) {
   console.log(req.params)
+  console.log(req.query)
   var body = {};
   
   try {
@@ -38,6 +39,10 @@ var nowUtc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
 console.log(nowUtc);
 console.log(nowUtc.toISOString());
     
+let page = req.query.page;
+let limit = req.query.limit;
+
+
     
 //    var tzString = "Asia/Kolkata";
     var date = new Date();
