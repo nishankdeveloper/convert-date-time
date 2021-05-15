@@ -33,10 +33,12 @@ app.get('/getCurrentDateTime', function (req, res) {
       var a = utcOffset.split(':');
       var hour = +a[0];
       var minute = utcOffset[0] == '-' ? -1 * +a[1] : +a[1] ;
+      console.log(hour +' ' +minute)
 
       //Get the value in minutes for the offset.
       var tzDifference = hour * 60 + minute;
-      
+      console.log(tzDifference)
+
       console.log(dateTime)
       var targetTime = new Date(dateTime);
       console.log(targetTime)
