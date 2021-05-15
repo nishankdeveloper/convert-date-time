@@ -1,5 +1,5 @@
 # Convert Date Time Zone
-## A simple Date Time convesion repo.
+## A simple Date Time conversion repo
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/nishankdeveloper/convert-date-time)
 
