@@ -19,7 +19,13 @@ app.get('/', function(request, response) {
 })
 
 app.get('/getCurrentDateTime', function (req, res) {
- console.log(req)
+ //console.log(req)
+  let dateTime = req.query.dateTime;
+  let convertTo = req.query.convertTo;
+   console.log(dateTime)
+ console.log(convertTo)
+
+  
   var body = {};
   
   try {
