@@ -37,8 +37,8 @@ app.get('/getCurrentDateTime', function (req, res) {
  //   console.log(clientTimezoneOffset)
     
     
-//var now = new Date("January 02, 2012 22:00:00 GMT+0530");
-//console.log(now);
+var now = new Date(dateTime);
+console.log(now.toISOString());
 //console.log(now.toISOString());
 //var nowUtc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
 //console.log(nowUtc);
