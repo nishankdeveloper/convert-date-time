@@ -30,6 +30,13 @@ app.get('/getCurrentDateTime', function (req, res) {
     var clientTimezoneOffset = new Date().getTimezoneOffset()/60;//offset in hours
     console.log(clientTimezoneOffset)
     
+    
+var now = new Date("January 02, 2012 22:00:00 GMT+0530");
+console.log(now);
+var nowUtc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+console.log(nowUtc);
+    
+    
 //    var tzString = "Asia/Kolkata";
     var date = new Date();
     date = new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US" ));//, {timeZone: tzString}));
