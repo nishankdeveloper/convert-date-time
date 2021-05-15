@@ -19,7 +19,7 @@ app.get('/', function(request, response) {
 })
 
 app.get('/getCurrentDateTime', function (req, res) {
-  
+  console.log(req.params)
   var body = {};
   
   try {
