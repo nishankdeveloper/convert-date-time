@@ -177,7 +177,7 @@ app.get('/getCurrentDateTime', function (req, res) {
     }else{
 
       body["success"] = false;
-      body["message"] = "Required field missing or not Date not in proper ISO format.";
+      body["message"] = "Required field missing or Date not in proper ISO format.";
 
     }
   
