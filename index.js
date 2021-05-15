@@ -1,4 +1,3 @@
-//https://github.com/filipdanic/compact-timezone-list/blob/master/index.js
 var express = require('express')
 const timezone = require("./timezone");
 
@@ -29,7 +28,6 @@ app.get('/dateTimeConversion', function (req, res) {
         
          if(element.tzCode != null && element.tzCode != 'undefined' && element.tzCode == convertTo){
             if(element.offset != null && element.offset != 'undefined'){
-              console.log(element.offset)
               utcOffset = element.offset ;
             }
          }
@@ -72,7 +70,6 @@ app.get('/dateTimeConversion', function (req, res) {
         
          if(element.tzCode != null && element.tzCode != 'undefined' && element.tzCode == convertFrom){
             if(element.offset != null && element.offset != 'undefined'){
-              console.log(element.offset)
               utcOffset = element.offset ;
             }
          }
