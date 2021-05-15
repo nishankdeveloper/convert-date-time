@@ -36,10 +36,14 @@ app.get('/getCurrentDateTime', function (req, res) {
 
       //Get the value in minutes for the offset.
       var tzDifference = hour * 60 + minute;
+      
+      console.log(dateTime)
       var targetTime = new Date(dateTime);
+      console.log(targetTime)
 
       //get the date in convertTo timezone.
       targetTime = new Date(targetTime.getTime() + tzDifference * 60 * 1000);
+      console.log(targetTime)
 
       //get the am/pm format time from the targetTime.
       var hours = targetTime.getHours();
