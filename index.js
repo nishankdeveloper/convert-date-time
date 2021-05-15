@@ -22,9 +22,16 @@ app.get('/getCurrentDateTime', function (req, res) {
     var utcOffset = "+00:00";   // by default
 
     if(dateTime != null && dateTime != 'undefined' && convertTo != null && convertTo != 'undefined'){
+      
       //Check timezone.JSON file tzCode to get offset value.
       timezone.forEach(element => {
-        utcOffset = element.tzCode != null && element.tzCode != 'undefined' && element.tzCode == convertTo ? element.offset != null && element.offset != 'undefined'? element.offset : null : null;
+        
+         if(element.tzCode != null && element.tzCode != 'undefined' && element.tzCode == convertTo){
+            if(element.offset != null && element.offset != 'undefined'){
+              console.log(element.offset)
+              utcOffset = element.offset ;
+              
+            }
       });
 
       //Split the offset fetched into hours and minutes.
@@ -71,6 +78,7 @@ app.get('/getCurrentDateTime', function (req, res) {
   }catch (exception) {
     body["success"] = false;
     body["message"] = exception;
+    console.log(exception)
   }
   finally {
     res.send(body);
