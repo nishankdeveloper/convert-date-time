@@ -19,8 +19,7 @@ app.get('/', function(request, response) {
 })
 
 app.get('/getCurrentDateTime', function (req, res) {
-  console.log(req.params)
-  console.log(req.query)
+ console.log(req)
   var body = {};
   
   try {
@@ -29,18 +28,16 @@ app.get('/getCurrentDateTime', function (req, res) {
 
     
     var clientTimezoneOffset = new Date().getTimezoneOffset()/60;//offset in hours
-    console.log(clientTimezoneOffset)
+ //   console.log(clientTimezoneOffset)
     
     
-var now = new Date("January 02, 2012 22:00:00 GMT+0530");
-console.log(now);
-console.log(now.toISOString());
-var nowUtc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
-console.log(nowUtc);
-console.log(nowUtc.toISOString());
+//var now = new Date("January 02, 2012 22:00:00 GMT+0530");
+//console.log(now);
+//console.log(now.toISOString());
+//var nowUtc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+//console.log(nowUtc);
+//console.log(nowUtc.toISOString());
     
-let page = req.query.page;
-let limit = req.query.limit;
 
 
     
@@ -64,13 +61,13 @@ let limit = req.query.limit;
   }
   catch (e) {
     body["success"] = false;
-    console.log(e)
-    console.log('exception message')
+ //   console.log(e)
+ //   console.log('exception message')
     
   }
   finally {
-    console.log('timenow')
-    console.log(new Date().toISOString())
+ ////   console.log('timenow')
+ //   console.log(new Date().toISOString())
     
     res.send(body);
   }
