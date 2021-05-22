@@ -188,7 +188,6 @@ app.get('/getCurrentDateTime', function (req, res) {
   }catch (exception) {
     body["success"] = false;
     body["message"] = exception;
-    console.log(exception)
   }
   finally {
     res.send(body);
