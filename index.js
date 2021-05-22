@@ -106,7 +106,7 @@ app.get('/dateTimeConversion', function (req, res) {
      }else{
 
       body["success"] = false;
-      body["message"] = "Required field missing or not Date not in proper ISO format.";
+      body["message"] = "Required field missing or Date not in proper ISO format.";
 
     }
   
@@ -127,7 +127,7 @@ app.get('/getCurrentDateTime', function (req, res) {
   try{
     var dateTime = new Date();
     var convertTo = req.query.convertTo;
-    var utcOffset = "+00:00";   // by default
+    var utcOffset = convertTo != null && convertTo == 'undefined' && convertTo.toLocaleLowerCase() == 'utc' ?  "+00:00" : null ;   // by default
 
     if(dateTime != null && dateTime != 'undefined' ){
       
@@ -141,6 +141,12 @@ app.get('/getCurrentDateTime', function (req, res) {
               }
            }
         });
+      }
+      
+      if(utcOffset == null){
+        body["success"] = false;
+        body["message"] = "Convert To param value is bad.";
+        res.send(body);
       }
 
       //Split the offset fetched into hours and minutes.
