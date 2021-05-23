@@ -19,7 +19,7 @@ app.get('/dateTimeConversion', function (req, res) {
     var dateTime = req.query.dateTime;
     var convertTo = req.query.convertTo;
     var convertFrom = req != null && req != 'undefined' && req.query != null && req.query != 'undefined' && req.query.convertFrom != null && req.query.convertFrom != null ? req.query.convertFrom : null;
-    var utcOffset = convertTo != null && convertTo == 'undefined' && convertTo.toLocaleLowerCase() == 'utc' ? "+00:00" : null ;   // by default
+    var utcOffset = convertTo != null && (convertTo == 'undefined' || convertTo.toLocaleLowerCase() == 'utc') ? "+00:00" : null ;   // by default
 
     if(dateTime != null && dateTime != 'undefined' && convertTo != null && convertTo != 'undefined' && convertTo.toLocaleLowerCase() != 'utc'){
       
@@ -131,7 +131,7 @@ app.get('/getCurrentDateTime', function (req, res) {
   try{
     var dateTime = new Date();
     var convertTo = req.query.convertTo;
-    var utcOffset = convertTo != null && convertTo == 'undefined' && convertTo.toLocaleLowerCase() == 'utc' ? "+00:00" : null ;   // by default
+    var utcOffset = convertTo != null && (convertTo == 'undefined' || convertTo.toLocaleLowerCase() == 'utc') ? "+00:00" : null ;   // by default
 
     if(dateTime != null && dateTime != 'undefined' ){
       
